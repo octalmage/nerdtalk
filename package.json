@@ -1,0 +1,15 @@
+{
+  "name": "nerdtalk",
+  "version": "0.0.1",
+  "description": "nerdtalk.",
+  "main": "index.js",
+  "dependencies": {
+    "socket.io-client": "^1.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Stallings",
+  "license": "MIT"
+}
