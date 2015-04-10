@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "nerdtalk.",
   "main": "nerdtalk.js",
+  "bin": {
+      "nerdtalk": "nerdtalk.js"
+  },
   "dependencies": {
     "socket.io-client": "^1.3.3"
   },
