@@ -8,8 +8,7 @@ var colors = require("colors");
  
 var rl = readline.createInterface(process.stdin, process.stdout);
 
-//Check and notify of update.
-updateNotifier({pkg: pkg}).notify();
+updateNotifier({pkg: pkg, updateCheckInterval: 1}).notify({defer: false});
 
 //After connecting to the server start looking for a partner.
 socket.on("connect", function()
