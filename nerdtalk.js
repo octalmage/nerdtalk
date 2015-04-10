@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 var socket = require("socket.io-client")("http://nerdtalk-server.herokuapp.com");
 var readline = require("readline");
