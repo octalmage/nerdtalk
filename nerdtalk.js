@@ -4,6 +4,7 @@ var socket = require("socket.io-client")("http://nerdtalk-server.herokuapp.com")
 var readline = require("readline");
 var updateNotifier = require("update-notifier");
 var pkg = require("./package.json");
+var colors = require("colors");
  
 var rl = readline.createInterface(process.stdin, process.stdout);
 
@@ -26,7 +27,7 @@ socket.on("found", function (data)
 //On message receive, output it!
 socket.on("receive", function (data)
 {
-    console_out("nerd> " + data);
+    console_out("nerd> ".cyan + data);
 });
 
 //When remote user disconnects, close the app.
@@ -39,7 +40,7 @@ socket.on("user disconnected", function (data)
 //Configure readline for sending messages.
 function setupPrompt()
 {
-    rl.setPrompt("you> ");
+    rl.setPrompt("you> ".cyan, 5);
     rl.prompt();
     rl.on("line", function(line)
     {
