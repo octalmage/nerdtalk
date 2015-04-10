@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var socket = require("socket.io-client")("http://nerdtalk-server.herokuapp.com");
+var socket = require("socket.io-client")("https://nerdtalk-server.herokuapp.com", {secure: true});
 var readline = require("readline");
 var updateNotifier = require("update-notifier");
 var pkg = require("./package.json");
