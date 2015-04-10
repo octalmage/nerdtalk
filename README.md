@@ -5,7 +5,7 @@ Talk to a random nerd from your terminal.
 
 To install run:
 ```
-npm install -g git://github.com/octalmage/nerdtalk.git
+npm install -g nerdtalk
 ```
 
 Then start with:
