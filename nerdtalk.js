@@ -43,8 +43,17 @@ function setupPrompt()
     rl.prompt();
     rl.on("line", function(line)
     {
-        socket.emit("chat message", line);
-        rl.prompt();
+        if (line[0] == "/" && line.length > 1) 
+        {
+            var cmd = line.match(/[a-z]+\b/)[0];
+            var arg = line.substr(cmd.length+2, line.length);
+            command(cmd, arg);
+        }
+        else
+        {
+            socket.emit("chat message", line);
+            rl.prompt();
+        }
     }).on("close",function()
     {
         process.exit(0);
@@ -62,5 +71,15 @@ function console_out(msg, prompt)
     if (prompt)
     {
         rl.prompt(true);
+    }
+}
+
+function command(cmd, arg)
+{
+    switch (cmd) 
+    {
+        case "quit":
+            rl.close();
+            break;
     }
 }
