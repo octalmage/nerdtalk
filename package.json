@@ -1,23 +1,26 @@
 {
-	"name": "nerdtalk",
-	"version": "0.0.2",
-	"description": "Talk to a random nerd from your terminal.",
-	"main": "nerdtalk.js",
-	"bin":
-	{
-		"nerdtalk": "nerdtalk.js"
-	},
-	"dependencies":
-	{
-		"socket.io-client": "^1.3.3",
-		"update-notifier": "^0.3.1"
-	},
-	"author": "Jason Stallings",
-	"license": "MIT",
-	"keywords": [
-		"chat",
-		"global",
-		"random"
-	],
-	"homepage": "https://github.com/octalmage/nerdtalk"
+  "name": "nerdtalk",
+  "version": "0.0.3",
+  "description": "Talk to a random nerd from your terminal.",
+  "main": "nerdtalk.js",
+  "bin": {
+    "nerdtalk": "nerdtalk.js"
+  },
+  "dependencies": {
+    "colors": "^1.0.3",
+    "socket.io-client": "^1.3.3",
+    "update-notifier": "^0.3.1"
+  },
+  "author": "Jason Stallings",
+  "license": "MIT",
+  "keywords": [
+    "chat",
+    "global",
+    "random"
+  ],
+  "homepage": "https://github.com/octalmage/nerdtalk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/octalmage/nerdtalk.git"
+  }
 }
