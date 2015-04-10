@@ -51,10 +51,16 @@ function setupPrompt()
     });
 }
 
-
-function console_out(msg) {
+//Hack to output on newline.
+function console_out(msg, prompt) 
+{
+    if (typeof prompt == "undefined") prompt=true;
     process.stdout.clearLine();
     process.stdout.cursorTo(0);
     console.log(msg);
-    rl.prompt(true);
+    
+    if (prompt)
+    {
+        rl.prompt();
+    }
 }
