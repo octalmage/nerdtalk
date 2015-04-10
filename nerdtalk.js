@@ -2,10 +2,13 @@
 
 var socket = require("socket.io-client")("http://nerdtalk-server.herokuapp.com");
 var readline = require("readline");
-
-
+var updateNotifier = require("update-notifier");
+var pkg = require("./package.json");
+ 
 var rl = readline.createInterface(process.stdin, process.stdout);
 
+//Check and notify of update.
+updateNotifier({pkg: pkg}).notify();
 
 
 
