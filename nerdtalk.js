@@ -62,6 +62,6 @@ function console_out(msg, prompt)
     
     if (prompt)
     {
-        rl.prompt();
+        rl.prompt(true);
     }
 }
