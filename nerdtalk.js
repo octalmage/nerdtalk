@@ -15,7 +15,7 @@ updateNotifier({pkg: pkg}).notify();
 socket.on("connect", function()
 {
     socket.emit("find");
-    console.log("Searching for nerd.");
+    console.log("Searching for a nerd.");
 });
 
 //Once a partner is found startup the chat prompt!
