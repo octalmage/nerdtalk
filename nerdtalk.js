@@ -29,6 +29,14 @@ socket.on("receive", function (data)
     console_out("nerd> " + data);
 });
 
+//When remote user disconnects, close the app.
+socket.on("user disconnected", function (data)
+{
+    console_out("Nerd disconnected.", false);
+    rl.close();
+});
+
+//Configure readline for sending messages.
 function setupPrompt()
 {
     rl.setPrompt("you> ");
