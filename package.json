@@ -1,7 +1,7 @@
 {
   "name": "nerdtalk",
   "version": "0.0.1",
-  "description": "nerdtalk.",
+  "description": "Talk to a random nerd from your terminal.",
   "main": "nerdtalk.js",
   "bin": {
     "nerdtalk": "nerdtalk.js"
