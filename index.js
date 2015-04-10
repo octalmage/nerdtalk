@@ -1,55 +1,47 @@
 
-var socket = require("socket.io-client")('http://127.0.0.1:5000');
-var readline = require('readline');
+var socket = require("socket.io-client")("http://nerdtalk-server.herokuapp.com");
+var readline = require("readline");
 
 
 var rl = readline.createInterface(process.stdin, process.stdout);
-rl.setPrompt('nerdtalk> ');
-rl.prompt();
-rl.on('line', function(line)
+
+
+
+
+socket.on("connect", function()
 {
-    socket.emit('message', line);
+    socket.emit("find");
+    console.log("Searching for nerd.");
+});
+
+socket.on("found", function (data)
+{
+    setupPrompt();
+});
+
+socket.on("receive", function (data)
+{
+    //rl.setPrompt('nerdtalk> ');
+    console_out("nerd> " + data);
+});
+
+function setupPrompt()
+{
+    rl.setPrompt("you> ");
     rl.prompt();
-}).on('close',function(){
-    process.exit(0);
-});
+    rl.on('line', function(line)
+    {
+        socket.emit("chat message", line);
+        rl.prompt();
+    }).on('close',function(){
+        process.exit(0);
+    });
+}
 
 
-
-socket.on('connect', function()
-{
-    console.log("connected, searching.");
-    find();
-});
-
-socket.on('found', function (data)
-{
-    console.log("found!");
-});
-
-socket.on('receive', function (data)
-{
-
-    console.log(data);
-
-
-});
-
-
-/*socket.on('receive', function (data)
-{
-
-    console.log(data);
-
-
-});*/
-
-//socket.emit('message', message);
-//find();
-
-
-function find()
-{
-        socket.emit('find', {user: "jason"});
-
+function console_out(msg) {
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    console.log(msg);
+    rl.prompt(true);
 }
