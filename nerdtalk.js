@@ -41,11 +41,12 @@ function setupPrompt()
 {
     rl.setPrompt("you> ");
     rl.prompt();
-    rl.on('line', function(line)
+    rl.on("line", function(line)
     {
         socket.emit("chat message", line);
         rl.prompt();
-    }).on('close',function(){
+    }).on("close",function()
+    {
         process.exit(0);
     });
 }
