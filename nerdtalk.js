@@ -10,22 +10,22 @@ var rl = readline.createInterface(process.stdin, process.stdout);
 //Check and notify of update.
 updateNotifier({pkg: pkg}).notify();
 
-
-
+//After connecting to the server start looking for a partner.
 socket.on("connect", function()
 {
     socket.emit("find");
     console.log("Searching for nerd.");
 });
 
+//Once a partner is found startup the chat prompt!
 socket.on("found", function (data)
 {
     setupPrompt();
 });
 
+//On message receive, output it!
 socket.on("receive", function (data)
 {
-    //rl.setPrompt('nerdtalk> ');
     console_out("nerd> " + data);
 });
 
