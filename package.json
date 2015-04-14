@@ -12,7 +12,7 @@
     "update-notifier": "^0.3.1"
   },
   "author": "Jason Stallings",
-  "license": "MIT",
+  "license": "GPL v2",
   "keywords": [
     "chat",
     "global",
