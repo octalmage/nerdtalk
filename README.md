@@ -1,7 +1,7 @@
 # nerdtalk
 Talk to a random nerd from your terminal. 
 
-### Instructions
+## Instructions
 
 To install run:
 ```
@@ -13,3 +13,7 @@ Then start with:
 ```
 nerdtalk
 ```
+
+## License
+
+GPL v2
