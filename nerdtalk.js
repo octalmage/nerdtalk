@@ -39,13 +39,15 @@ socket.on("user disconnected", function (data)
 //Configure readline for sending messages.
 function setupPrompt()
 {
+    var commandRegex = /[a-z]+\b/;
+    
     rl.setPrompt("you> ".cyan, 5);
     rl.prompt();
     rl.on("line", function(line)
     {
-        if (line[0] == "/" && line.length > 1) 
+        if (line[0] == "/" && line.length > 1 && line.match(commandRegex))
         {
-            var cmd = line.match(/[a-z]+\b/)[0];
+            var cmd = line.match(commandRegex)[0];
             var arg = line.substr(cmd.length+2, line.length);
             command(cmd, arg);
         }
